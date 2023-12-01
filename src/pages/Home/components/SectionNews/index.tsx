@@ -7,8 +7,8 @@ import { Modal } from "../../../../components/DialogModal"
 
 export const SectionNews = () => {
   return (
-    <ContainerNews>
-      <TitleText color="white" size="s" weight={900} family="roboto">Lançamentos</TitleText>
+    <ContainerNews id="news">
+      <TitleText color="white" size="s" weight={900} family="roboto">Último Lançamento</TitleText>
       <TitleText size="m" lineHeight="m" weight={300}>Deus de Poder, Ao Vivo</TitleText>
     
       <Dialog.Root>

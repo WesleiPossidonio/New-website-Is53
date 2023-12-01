@@ -6,7 +6,7 @@ import { ButtonHero, ContainerHero, ContainerText, Video } from './styled'
 
 export const Hero = () => {
   return (
-    <ContainerHero>
+    <ContainerHero id='Home'>
       <Video src={HomeVideo} autoPlay loop muted />
 
       <ContainerText>

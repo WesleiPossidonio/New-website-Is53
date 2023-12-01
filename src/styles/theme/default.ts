@@ -1,7 +1,8 @@
 export const DefaultThemes = {
     colors: {
-        'base-blue': '#3452FF',
+        'base-blue': '#11394B',
         'base-bg': '#0B0B0C',
+        'base-bd-card': '#121212',
 
         'base-white': '#fff',
         'base-gray': 'rgba(255, 255, 255, 0.69)'

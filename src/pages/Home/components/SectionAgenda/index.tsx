@@ -3,8 +3,6 @@ import { useEffect, useState, useCallback } from 'react'
 import { ContainerAgenda, ContainerList, ListAgenda } from './styled'
 import { TextRegular, TitleText } from '../../../../components/typograph'
 import api from '../../../../services/api'
-
-
 interface listAgendaProps {
     id: 'string',
     church_name: 'string',
@@ -17,33 +15,49 @@ export const SectionAgenda = () => {
 
 
     const sendListAgenda = useCallback(async () => {
-        const listAgens = await api.get('listCalendar')
-        const { data } = listAgens
-    
+        const listAgenda = await api.get('listCalendar')
+        const { data } = listAgenda
+
         setListAgenda(data)
       }, [])
 
+
+      const loadListAgenda = async () => {
+        const LocalListAgenda = await localStorage.getItem('cartorio:userData1.0')
+        const listAgend = LocalListAgenda && JSON.parse(LocalListAgenda)
+
+        if(listAgenda !== listAgend) {
+          sendListAgenda()
+        } else {
+          setListAgenda(listAgend)
+        }
+      }
+
+
     useEffect(() => {
-        sendListAgenda()
+      loadListAgenda()
     }, [])
 
 
   return (
     <ContainerAgenda>
-      <TitleText size='l' family='dosis' weight={300}>Agenda</TitleText>
+      <TitleText size='m' family='dosis' weight={300}>Gig Is53</TitleText>
+      <TextRegular size="s" color="gray">Fique por dentro da nossa agenda!</TextRegular>
 
       <ContainerList>
        {
           listAgenda.map( list => {
             return (
-                <ListAgenda key={list.id}>
-                    <TextRegular>{list.church_name}</TextRegular>
-                    <TextRegular>{list.agenda_date}</TextRegular>
-                    <TextRegular>{list.address}</TextRegular>
-                </ListAgenda>
+              <ListAgenda key={list.id}>
+                  <div>
+                     <TextRegular>{list.church_name}</TextRegular>
+                     <TextRegular>{list.address}</TextRegular>
+                  </div>
+                  <TextRegular>{list.agenda_date}</TextRegular>
+              </ListAgenda>
             )
           })
-       }
+        }
       </ContainerList>
     </ContainerAgenda>
   )
