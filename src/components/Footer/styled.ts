@@ -40,6 +40,7 @@ export const Content = styled.div`
       align-items: center;
       justify-content: center;
       gap: 0.3rem;
+      
       cursor: pointer;
     }
 
