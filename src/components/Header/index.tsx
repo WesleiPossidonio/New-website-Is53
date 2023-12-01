@@ -1,5 +1,4 @@
 import { ContainerHeader, ContentList, MenuLink } from "./styled"
-import { Link } from 'react-scroll'
 import { useState, useEffect } from 'react'
 
 import Logo from '../../assets/Logo-is53.svg'
