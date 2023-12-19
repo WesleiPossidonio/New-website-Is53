@@ -1,5 +1,5 @@
 
-import HomeVideo from '../../../../assets/video-home.mp4'
+import HomeVideo from '../../../../assets/VideoHero.mp4'
 import { TextRegular, TitleText } from '../../../../components/typograph'
 import { ButtonHero, ContainerHero, ContainerText, Video } from './styled'
 
@@ -13,7 +13,7 @@ export const Hero = () => {
         <TitleText size='l' lineHeight='l' weight={300}>IS53</TitleText>
         <TextRegular size='m'>Lorem ipsum dolor sit amet consectetur elit.</TextRegular>
 
-        <ButtonHero>últimos Lançamentos</ButtonHero>
+        <ButtonHero to="news" smooth={true}>últimos Lançamentos</ButtonHero>
       </ContainerText>
 
     

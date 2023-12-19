@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ContainerAgenda = styled.section`
   width: 100%;
-  height: 45rem;
+  height: max-content;
   max-height: max-content;
   
   display: flex;
@@ -21,11 +21,12 @@ export const ContainerAgenda = styled.section`
 
   @media(max-width: 768px) {
     padding: 9rem 0.5rem;
-
   }
 
 
   @media(max-width: 600px) {
+    padding: 0.5rem 0.5rem 3rem 0.5rem;
+
     h1 {
       margin-top: 8rem;
     }

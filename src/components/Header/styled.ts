@@ -8,8 +8,9 @@ export const ContainerHeader = styled.header<ContainerHeaderProps>`
   width: 100%;
   height: 6rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 
   position: fixed;
 
@@ -17,9 +18,36 @@ export const ContainerHeader = styled.header<ContainerHeaderProps>`
     stateHeader ? theme.colors["base-bg"] : 'transparent'};
   z-index: 9999;
 
- > img  {
+  @media(max-width: 768px){
+    padding: 0 2rem;
+  }
+
+`
+
+export const Headerdesktop = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+> img  {
     width: 2rem;
+    z-index: 9999;
  }
+
+ > svg {
+    display: none;
+    z-index: 9999;
+ }
+
+ @media(max-width: 768px){
+    justify-content: space-between;
+
+    > svg {
+      display: block;
+      color: #fff;
+    }
+  }
 
 `
 
@@ -29,6 +57,36 @@ export const ContentList = styled.nav`
   justify-content: center;
   gap: 2rem;
 
+  @media(max-width: 768px){
+    display: none;
+  }
+
+`
+
+interface ContentListMobileProps {
+  isOpen: boolean
+}
+
+export const ContentListMobile = styled.nav<ContentListMobileProps>`
+  width: 100%;
+  height: 100vh;
+
+  position: absolute;
+  bottom: 0;
+  top: 0;
+
+  display: ${({isOpen}) => isOpen ? 'flex' : 'none'};
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+
+  background-color: ${({theme}) => theme.colors["base-bg"]};
+
+
+  @media(min-width: 768px){
+    display: none;
+  }
 `
 
 export const MenuLink = styled(Link)`

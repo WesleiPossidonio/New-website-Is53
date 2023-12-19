@@ -40,7 +40,7 @@ export const SectionAgenda = () => {
 
 
   return (
-    <ContainerAgenda>
+    <ContainerAgenda id='schedule'>
       <TitleText size='m' family='dosis' weight={300}>Gig Is53</TitleText>
       <TextRegular size="s" color="gray">Fique por dentro da nossa agenda!</TextRegular>
 

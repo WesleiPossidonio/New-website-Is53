@@ -10,11 +10,10 @@ export const Modal = () => {
         <CloseButton>
           <X size={24}  color='#fff' />
         </CloseButton>
-        <iframe src="https://www.youtube.com/embed/6aQxi4mJXEQ?si=TF_lDM1sQZ9ikoRj" 
-          title="YouTube video player"  allow="accelerometer; autoplay; 
-          clipboard-write; encrypted-media; gyroscope; picture-in-picture; 
-          web-share"  
-        />
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/YJ4dcppsg3Q?si=f2vWN8hoSjQjK5a7"
+            title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; 
+            encrypted-media; gyroscope; picture-in-picture; web-share" 
+          />
       </Content>
     </Dialog.Portal>
   )

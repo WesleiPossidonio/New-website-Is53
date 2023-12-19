@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from 'react-scroll'
 
 export const ContainerHero = styled.section`
   width: 100%;
@@ -10,9 +11,20 @@ export const ContainerHero = styled.section`
   justify-content: center;
   position: relative;
 
+
  > h1 {
     margin-bottom: 0.875rem;
  }
+
+ &::before{
+    content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6); 
+  }
 `
 
 export const Video = styled.video`
@@ -32,7 +44,7 @@ export const ContainerText = styled.div `
   justify-content: center;
 `
 
-export const ButtonHero = styled.button`
+export const ButtonHero = styled(Link)`
   width: 15.25rem;
   height: 3.125rem;
 
