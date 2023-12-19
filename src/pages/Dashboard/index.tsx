@@ -1,33 +1,51 @@
-import { ContainerDashBoard, ContentDashboard, ContentData, Form, HeaderDashboard } from "./styled"
 
 import Logo from '../../assets/Logo-is53.svg'
-import { TextRegular, TitleText } from "../../components/typograph"
-import { Input } from "../../components/Input"
-import { Button } from "../../components/Button"
+import { TextRegular } from "../../components/typograph"
+import { useState } from "react"
+import { AddSchedule } from "./components/AddSchedule"
+import { AddUser } from "./components/AddUsers"
+
+import { ContainerDashBoard, ContentData, HeaderDashboard } from "./styled"
+import { ListGig } from './components/ListGig'
 
 export const Dashboard = () => {
+const [selectedHeader, setSelectedHeader] = useState('Criar Agenda')
+
+const handleSectedHeader = (data: string) => {
+  setSelectedHeader(data)
+}
+
   return (
     <ContainerDashBoard>
       <ContentData>
         <HeaderDashboard>
           <img src={Logo} alt="" />
           <div>
-            <TextRegular weight={700}>Criar Usuário</TextRegular>
-            <TextRegular weight={700}>Listas de Agendas</TextRegular>
+            <TextRegular weight={700}  
+              onClick={() => handleSectedHeader('Criar Agenda')}
+            >  
+              Criar Agenda
+            </TextRegular>
+  
+            <TextRegular weight={700} 
+              onClick={() => handleSectedHeader('Criar Usuario')}
+            >
+              Criar Usuário
+            </TextRegular>
+  
+            <TextRegular weight={700} 
+              onClick={() => handleSectedHeader('Lista')}
+            >
+              Listas de Agendas
+            </TextRegular>
           </div>
         </HeaderDashboard>
 
-        <ContentDashboard>
-          <TitleText size="m">Adicionar Gig</TitleText>
-          
-          <Form>
-            <Input placeholder="Digite o nome da Igreja ou Evento" colorDashboard />
-            <Input placeholder="Digite o nome da Cidade da Igreja ou Evento" colorDashboard />
-            <Input type="date" colorDashboard/>
-          </Form>
-
-          <Button dashboard>Enviar</Button>
-        </ContentDashboard>
+       {
+          selectedHeader === 'Criar Agenda' && <AddSchedule /> ||
+          selectedHeader === 'Criar Usuario' && <AddUser /> ||
+          selectedHeader === 'Lista' && <ListGig />
+       }
 
       </ContentData>
     </ContainerDashBoard>

@@ -59,9 +59,9 @@ export const ContentNav = styled(Content)`
     }
 
     > p { 
-      &:hover {
+        &:hover {
         color: ${({theme}) => theme.colors["base-blue"]};
-      }
+       }
     }
 `
 

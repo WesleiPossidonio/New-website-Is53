@@ -12,8 +12,8 @@ export const ContainerDashBoard = styled.main`
 `
 
 export const ContentData = styled.section`
-    width: 80%;
-    height: 40rem;
+    width: 85%;
+    height: 50rem;
     max-height: max-content;
 
     display: flex;
@@ -57,8 +57,8 @@ export const HeaderDashboard = styled.div`
 `
 
 export const ContentDashboard = styled.div`
-  width: 80%;
-  height: 30rem;
+  width: 90%;
+  height: 38rem;
 
   display: flex;
   flex-direction: column;
@@ -66,13 +66,13 @@ export const ContentDashboard = styled.div`
   justify-content: center;
   gap: 1rem;
 
-  margin-top: 3rem;
+  margin-top: 1rem;
   padding: 2rem;
 
   border: none;
   border-radius: 8px;
 
-  background-color: ${({theme}) => theme.colors["base-bg"]};
+  
 
   > h1 {
     align-self: flex-start;

@@ -5,7 +5,7 @@ import * as zod from 'zod'
 
 import { Button } from "../../components/Button"
 import { Input } from "../../components/Input"
-import { TextRegular, TitleText } from "../../components/typograph"
+import {  TitleText } from "../../components/typograph"
 import { ContainerForm, ContainerLogin, Form, TextLink,} from "./styled"
 import { useDataUser } from '../../contexts/UserContext'
 

@@ -3,12 +3,12 @@ import { ContainerButton } from "./styled"
 
 interface ButtonProps {
   children: ReactNode
-  dashboard: boolean
+  dashboard?: boolean
 }
 
-export const Button = ({children, dashboard}: ButtonProps) => {
+export const Button = ({children, dashboard, ...props}: ButtonProps) => {
   return (
-    <ContainerButton dashboard={dashboard}>
+    <ContainerButton {...props} dashboard={dashboard}>
         {children}
     </ContainerButton>
   )

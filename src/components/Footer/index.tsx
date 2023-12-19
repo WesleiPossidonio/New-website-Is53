@@ -17,10 +17,11 @@ export const Footer = () => {
 
         <ContentNav>
             <TitleText weight={600} family='roboto'>Navegação</TitleText>
-            <Link to="Home" smooth={true}><TextRegular>Home</TextRegular></Link>
-            <Link to="about" smooth={true}><TextRegular>Sobre Nós</TextRegular></Link>
-            <Link to="news" smooth={true}><TextRegular>Lançamentos</TextRegular></Link>
-            <Link to="story" smooth={true}><TextRegular>Loja</TextRegular></Link>
+            <TextRegular><Link to="Home" smooth={true}>Home</Link></TextRegular>
+            <TextRegular><Link to="about" smooth={true}>Sobre Nós</Link></TextRegular>
+            <TextRegular><Link to="schedule" smooth={true}>Agenda</Link></TextRegular>
+            <TextRegular><Link to="news" smooth={true}>Lançamentos</Link></TextRegular>
+            <TextRegular> <Link to="story" smooth={true}>Loja</Link></TextRegular>
         </ContentNav>
 
         <ContentNav>

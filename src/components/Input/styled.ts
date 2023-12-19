@@ -23,14 +23,13 @@ export const InputContaineStyle = styled.div<InputStyleContainerProps>`
   line-height: 1.3125rem;
 
   background: ${({ theme, bgDashboard  }) => bgDashboard ? theme.colors['base-bd-card'] : theme.colors['base-bg']};
+ 
 
-  border-radius: 8.07781px;
-  border: 1px solid ${({ theme }) => theme.colors['base-bg']};
-
-  ${({ hasError }) =>
+  ${({ hasError, }) =>
     hasError &&
     css`
       border-color: ${({ theme }) => theme.colors['base-red']};
+
     `}
 `
 
@@ -39,7 +38,9 @@ export const InputStyled = styled.input`
   height: 100%;
 
   background: none;
-  border: none;
+
+  border: 2px solid ${({ theme }) => theme.colors['base-bg']};
+  border-radius: 8.07781px;
 
   font-size: ${({ theme }) => theme.fontSizes['text-regular-s']};
   line-height: 1.3125rem;
@@ -50,7 +51,7 @@ export const InputStyled = styled.input`
   color: ${({ theme }) => theme.colors['base-white']};
 
   &:focus {
-    border: 1px solid ${({ theme }) => theme.colors['base-blue']};
+    border: 2px solid ${({ theme }) => theme.colors['base-blue']};
     border-radius: 8px;
   }
 `
