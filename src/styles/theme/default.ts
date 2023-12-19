@@ -5,7 +5,8 @@ export const DefaultThemes = {
         'base-bd-card': '#121212',
 
         'base-white': '#fff',
-        'base-gray': 'rgba(255, 255, 255, 0.69)'
+        'base-gray': 'rgba(255, 255, 255, 0.69)',
+        'base-red': '#ff0000',
     },
 
     fontSizes: {

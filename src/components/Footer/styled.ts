@@ -32,7 +32,7 @@ export const Content = styled.div`
 
    > img {
       width: 3rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1rem;
     }
 
    > p {
