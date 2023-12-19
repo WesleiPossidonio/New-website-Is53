@@ -6,7 +6,6 @@ import { ContentDashboard, Form } from "../../styled"
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as zod from 'zod'
 
-
 const createScheduleFormSchema = zod.object({
   churchName: zod.string().min(3, 'Por Favor digite um nome da igreja ou evento'),
   AgendaDate: zod.string(),

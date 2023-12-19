@@ -24,7 +24,7 @@ export const AddUser = () => {
     control,
     register,
     handleSubmit,
-    formState: { isSubmitting, errors },
+    formState: {  errors },
     reset,
   } = useForm<CreateUserFormInputs>({
     resolver: zodResolver(createUserFormSchema),
@@ -36,6 +36,7 @@ export const AddUser = () => {
 
   const handleCreatedUser = (data: CreateUserFormInputs) => {
     console.log(data)
+    reset()
   }
 
   return (
