@@ -1,18 +1,18 @@
 import { Routes, Route} from 'react-router-dom'
 import { Home } from '../pages/Home'
-// import { PrivateRoutes } from './PrivateRoutes'
-// import { Dashboard } from '../pages/Dashboard'
+import { Dashboard } from '../pages/Dashboard'
 import { Login } from '../pages/Login'
+import { PrivateRoutes } from './PrivateRoutes'
 
 export const Router = () => {
   return (
     <Routes>
-      <Route path='/' element={<Home/>} />
+      <Route path='/homr' element={<Home/>} />
       <Route path='/login' element={<Login/>} />
     
-      {/* <Route path="/" element={<PrivateRoutes />}>
-          <Route path="/dashboard" element={<Dashboard />} />
-      </Route> */}
+      <Route path="/dashboard/*" element={<PrivateRoutes />}>
+        <Route path="/admin" element={<Dashboard />} />
+      </Route>
     </Routes>
   )
 }

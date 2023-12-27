@@ -12,7 +12,6 @@ function App() {
     <>
       <BrowserRouter>
         <AppProvider>
-         
           <ThemeProvider theme={DefaultThemes}>
             <ToastContainer theme="dark" />
             <GlobalStyled />
