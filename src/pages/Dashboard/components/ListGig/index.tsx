@@ -6,7 +6,6 @@ import { ContentDashboard } from "../../styled"
 // import { useNavigate } from "react-router-dom";
 
 import {
-  Paper, 
   Table, 
   TableBody, 
   TableCell, 
@@ -70,7 +69,7 @@ export const ListGig = () => {
     <ContentDashboard>
       <TitleText size="m">Lista de Agendas</TitleText>
 
-      <ListRequerimentTable component={Paper}>
+      <ListRequerimentTable>
         <Table aria-label="simple table">
           <TableHead>
             <TableRow>
