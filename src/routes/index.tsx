@@ -4,10 +4,11 @@ import { Dashboard } from '../pages/Dashboard'
 import { Login } from '../pages/Login'
 import { PrivateRoutes } from './PrivateRoutes'
 
+
 export const Router = () => {
   return (
     <Routes>
-      <Route path='/homr' element={<Home/>} />
+      <Route path='/' element={<Home/>} />
       <Route path='/login' element={<Login/>} />
     
       <Route path="/dashboard" element={<PrivateRoutes />}>
