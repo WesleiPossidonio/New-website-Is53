@@ -15,6 +15,13 @@ import { useNavigate } from 'react-router-dom'
     password: string
   }
 
+  interface CreateUserProps {
+    name: string
+    password: string
+    admin: string
+    email: string
+  }
+
   interface DataUserProps {
     id: string
     name: string
@@ -24,7 +31,8 @@ import { useNavigate } from 'react-router-dom'
   }
   
   interface UserCompanyType {
-    HandleLogin: (data: DataLoginProps) => void
+    HandleLogin: (data: DataLoginProps) => Promise<void>
+    handleCreateUser: (data: CreateUserProps ) => Promise<void>
     dataUser: DataUserProps
   }
   
@@ -71,10 +79,28 @@ import { useNavigate } from 'react-router-dom'
       [navigate],
     )
 
+    const handleCreateUser = useCallback( async (data: CreateUserProps) => {
+
+      const {admin, email, name, password} = data
+
+      try {
+         await toast.promise(
+          api.post('users', {admin, email, name, password }), 
+          {
+            pending: 'Verificando seus dados',
+            success: 'Usuário Criado!',
+            error: 'Verifique os dados e tente novamente 🤯',
+          },
+        )
+      } catch (error) {
+        console.log('rerror =>', error)
+      }
+    }, [])
+
 
     return (
       <DataUserContext.Provider
-        value={{HandleLogin, dataUser}}
+        value={{HandleLogin, dataUser, handleCreateUser}}
       >
         {children}
       </DataUserContext.Provider>

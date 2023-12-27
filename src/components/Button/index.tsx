@@ -6,9 +6,9 @@ interface ButtonProps {
   dashboard?: boolean
 }
 
-export const Button = ({children, dashboard, ...props}: ButtonProps) => {
+export const Button = ({children, dashboard}: ButtonProps) => {
   return (
-    <ContainerButton {...props} dashboard={dashboard}>
+    <ContainerButton dashboard={dashboard}>
         {children}
     </ContainerButton>
   )

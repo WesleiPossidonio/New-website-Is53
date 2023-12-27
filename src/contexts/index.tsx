@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 import { DataUserProvider } from './UserContext'
+import { DataAgendaProvider } from './AgendaContext'
 
 interface AppProviderProps {
   children: ReactNode
@@ -7,6 +8,8 @@ interface AppProviderProps {
 
 export const AppProvider = ({ children }: AppProviderProps) => {
   return (
-   <DataUserProvider>{children}</DataUserProvider>
+    <DataAgendaProvider>
+      <DataUserProvider>{children}</DataUserProvider>
+   </DataAgendaProvider>
   )
 }

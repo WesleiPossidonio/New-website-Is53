@@ -5,11 +5,12 @@ import { TitleText } from "../../../../components/typograph"
 import { ContentDashboard, Form } from "../../styled"
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as zod from 'zod'
+import { useDataAgenda } from "../../../../contexts/AgendaContext"
 
 const createScheduleFormSchema = zod.object({
-  churchName: zod.string().min(3, 'Por Favor digite um nome da igreja ou evento'),
-  AgendaDate: zod.string(),
-  Address: zod.string().min(3, 'Por Favor digite o endereço da igreja ou evento'),
+  church_name: zod.string().min(3, 'Por Favor digite um nome da igreja ou evento'),
+  agenda_date: zod.string(),
+  address: zod.string().min(3, 'Por Favor digite o endereço da igreja ou evento'),
 })
 
 type CreateScheduleFormInputs = zod.infer<typeof createScheduleFormSchema>
@@ -25,8 +26,10 @@ export const AddSchedule = () => {
     resolver: zodResolver(createScheduleFormSchema),
   })
 
+  const {handleCreateAgenda} = useDataAgenda()
+
   const handleCreatedSchedule = (data: CreateScheduleFormInputs) => {
-     console.log(data)
+     handleCreateAgenda(data)
      reset()
   }
 
@@ -38,20 +41,20 @@ export const AddSchedule = () => {
       <Input
         placeholder="Digite o nome da Igreja ou Evento" 
         colorDashboard 
-        {...register('churchName')} type="text"
-        error={errors.churchName?.message} 
+        {...register('church_name')} type="text"
+        error={errors.church_name?.message} 
       />
       <Input 
         placeholder="Digite o nome da Cidade da Igreja ou Evento" 
         colorDashboard 
-        {...register('Address')} type="text"
-        error={errors.Address?.message} 
+        {...register('address')} type="text"
+        error={errors.address?.message} 
       />
       <Input 
         type="date" 
         colorDashboard
-        {...register('AgendaDate')} 
-        error={errors.AgendaDate?.message} 
+        {...register('agenda_date')} 
+        error={errors.agenda_date?.message} 
       />
 
       <Button dashboard>Enviar</Button>

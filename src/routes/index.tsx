@@ -6,7 +6,6 @@ import { Login } from '../pages/Login'
 
 export const Router = () => {
   return (
-  
     <Routes>
       <Route path='/' element={<Home/>} />
       <Route path='/login' element={<Login/>} />
@@ -15,7 +14,6 @@ export const Router = () => {
           <Route path="/dashboard" element={<Dashboard />} />
       </Route>
     </Routes>
- 
   )
 }
 
