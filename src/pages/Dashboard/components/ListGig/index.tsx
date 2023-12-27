@@ -35,6 +35,7 @@ export const ListGig = () => {
   console.log(listAgenda)
 
   const handleChangePage = (event: unknown, newPage: number) => {
+    console.log(event)
     setPage(newPage)
   }
 
