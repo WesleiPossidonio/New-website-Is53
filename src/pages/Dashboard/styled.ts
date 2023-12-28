@@ -9,6 +9,10 @@ export const ContainerDashBoard = styled.main`
     justify-content: center;
 
     background-color: ${({theme}) => theme.colors["base-bg"]};
+
+    @media(max-width: 500px){
+      padding: 2.5rem 0;
+    }
 `
 
 export const ContentData = styled.section`
