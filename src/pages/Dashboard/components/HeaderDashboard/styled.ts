@@ -22,7 +22,11 @@ export const ContainerHeaderDashboard = styled.div`
     }
 
     svg {
-        color: ${({theme}) => theme.colors["base-white"]};;
+        color: ${({theme}) => theme.colors["base-white"]};
+
+        @media(min-width: 720px){
+          display: none;
+        }
     }
 
     @media(max-width: 720px){
@@ -36,12 +40,16 @@ interface ContentLinkProps {
 }
 
 export const ContentLink = styled.div<ContentLinkProps>`
-    display: ${({isOpen}) => isOpen ? 'flex' : 'none'};
+    display: flex;
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
 
-    ${({isOpen}) => isOpen && css`
+    @media(max-width: 720px){
+
+        display: ${({isOpen}) => isOpen ? 'flex' : 'none'};
+
+        ${({isOpen}) => isOpen && css`
        width: 90%;
        flex-direction: column;
        margin: 0 auto;
@@ -58,5 +66,6 @@ export const ContentLink = styled.div<ContentLinkProps>`
 
        background-color: ${({theme}) => theme.colors["base-bg"]};
     `}
+    }
 
 `

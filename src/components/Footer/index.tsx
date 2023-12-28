@@ -12,7 +12,7 @@ export const Footer = () => {
         <Content>
             <img src={Logo} alt="" />
             <TextRegular weight={700}>Todos os Direitos Reservados</TextRegular>
-            <TextRegular> &copy; 2023 Desenvolvido por <a href="www.weslifranca.com.br" target='_blank' className='link'>Weslei França</a></TextRegular>
+            <TextRegular> &copy; 2023 Desenvolvido por <a href="https://www.wesleifranca.com.br" target='_blank' className='link'>Weslei França</a></TextRegular>
         </Content>
 
         <ContentNav>

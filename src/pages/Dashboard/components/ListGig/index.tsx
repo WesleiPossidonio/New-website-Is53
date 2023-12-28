@@ -31,8 +31,6 @@ export const ListGig = () => {
   // const navigate = useNavigate()
   const {listAgenda, deleteList} = useDataAgenda()
 
-  console.log(listAgenda)
-
   const handleChangePage = (event: unknown, newPage: number) => {
     console.log(event)
     setPage(newPage)

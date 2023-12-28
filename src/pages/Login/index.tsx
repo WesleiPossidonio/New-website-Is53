@@ -48,7 +48,7 @@ export const Login = () => {
             error={errors.email?.message} />
 
           <Input placeholder="Digite Sua Senha" 
-            {...register('password')} type="text"
+            {...register('password')} type="password"
             error={errors.password?.message} />
 
           <Button>Acessar</Button>
