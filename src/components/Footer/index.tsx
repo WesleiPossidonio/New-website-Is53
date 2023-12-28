@@ -5,8 +5,15 @@ import { ContainerFooter, ContainerIcons, Content, ContentNav } from './styled'
 import { Link } from 'react-scroll'
 
 import Logo from '../../assets/Logo-is53.svg'
+import { useNavigate } from 'react-router-dom'
 
 export const Footer = () => {
+const navigate = useNavigate()
+
+const navigateToLogin = () => {
+    navigate('/login')
+}
+
   return (
     <ContainerFooter>
         <Content>
@@ -22,6 +29,7 @@ export const Footer = () => {
             <TextRegular><Link to="schedule" smooth={true}>Agenda</Link></TextRegular>
             <TextRegular><Link to="news" smooth={true}>Lançamentos</Link></TextRegular>
             <TextRegular> <Link to="story" smooth={true}>Loja</Link></TextRegular>
+            <TextRegular onClick={navigateToLogin}>Admin</TextRegular>
         </ContentNav>
 
         <ContentNav>
