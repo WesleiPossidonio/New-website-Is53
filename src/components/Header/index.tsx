@@ -9,8 +9,8 @@ export const Header = () => {
 
   const [stateBackgroundHeader, setStateBackgroundHeader] =
   useState<boolean>(false)
-
   const [isOpen, setIsOpen] = useState(false)
+  
 
   useEffect(() => {
     const handleScroll = () => {

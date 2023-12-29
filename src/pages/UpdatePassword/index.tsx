@@ -22,7 +22,7 @@ const loginCompaniesFormSchema = zod.object({
 
 type createLoginCompaniesFormInputs = zod.infer<typeof loginCompaniesFormSchema>
 
-export const Login = () => {
+export const UpdatePassword = () => {
   const {
     register,
     handleSubmit,
@@ -31,38 +31,38 @@ export const Login = () => {
   } = useForm<createLoginCompaniesFormInputs>({
     resolver: zodResolver(loginCompaniesFormSchema),
   })
-
   const navigate = useNavigate()
 
-  const { HandleLogin } = useDataUser()
+  const { updateUser } = useDataUser()
 
   const handleLogin = (data: createLoginCompaniesFormInputs) => {
-    HandleLogin(data)
+    updateUser(data)
     reset()
   }
 
   const handleNavigateToUpdatePassword = () => {
-    navigate('/atualizar-senha')
+    navigate('/login')
   }
+
 
   return (
     <ContainerLogin>
       <ContainerForm>
-        <TitleText size="m">Login</TitleText>
+        <TitleText size="m">Atualizar Senha</TitleText>
         <Form onSubmit={handleSubmit(handleLogin)}>
           <Input placeholder="Digite seu E-mail" 
             {...register('email')} type="text"
             error={errors.email?.message} />
 
-          <Input placeholder="Digite Sua Senha" 
+          <Input placeholder="Digite Sua Nova Senha" 
             {...register('password')} type="password"
             error={errors.password?.message} />
 
-          <Button>Acessar</Button>
+          <Button>Atualizar</Button>
         </Form>
 
         <TextLink onClick={handleNavigateToUpdatePassword}>
-          Esqueci Senha?
+          Voltar ao Login
         </TextLink>
       </ContainerForm>
     </ContainerLogin>

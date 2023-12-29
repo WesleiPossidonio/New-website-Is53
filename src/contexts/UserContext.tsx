@@ -33,6 +33,7 @@ import { useNavigate } from 'react-router-dom'
   interface UserCompanyType {
     HandleLogin: (data: DataLoginProps) => Promise<void>
     handleCreateUser: (data: CreateUserProps ) => Promise<void>
+    updateUser: (data: DataLoginProps) => Promise<void>
     dataUser: DataUserProps
   }
   
@@ -98,9 +99,34 @@ import { useNavigate } from 'react-router-dom'
     }, [])
 
 
+    const updateUser = useCallback( async (data: DataLoginProps) => {
+      const {email, password} = data
+      try {
+         await toast.promise(
+          api.put('update-password', { email, password }),
+          {
+            pending: 'Verificando seus dados',
+            success: 'Senha Atualizada com Sucesso!',
+            error: 'Verifique seu email 🤯',
+          },
+        )
+    
+        setTimeout(() => {
+          navigate('/login')
+        }, 1000)
+      } catch (error) {
+        setTimeout(() => {
+          navigate('/atualizar-senha')
+        }, 1000)
+        console.log(error)
+      }
+
+    }, [])
+
+
     return (
       <DataUserContext.Provider
-        value={{HandleLogin, dataUser, handleCreateUser}}
+        value={{HandleLogin, dataUser, handleCreateUser, updateUser}}
       >
         {children}
       </DataUserContext.Provider>
