@@ -3,13 +3,13 @@ import { Button, CardSwiper, ContainerStore, Footer } from "./styled"
 
 import { Swiper } from 'swiper/react';
 
-import Camiset1 from '../../../../assets/Camiseta1.webp'
-import Camiset2 from '../../../../assets/Camiseta2.webp'
-import Camiset3 from '../../../../assets/Camiseta3.webp'
-import Camiset4 from '../../../../assets/Camiseta4.webp'
-import Camiset5 from '../../../../assets/Camiseta5.webp'
-import Camiset6 from '../../../../assets/Camiseta6.webp'
-import Camiset7 from '../../../../assets/Camiseta7.webp'
+import Camiset1 from '../../../../assets/Camiseta1.png'
+import Camiset2 from '../../../../assets/Camiseta2.png'
+import Camiset3 from '../../../../assets/Camiseta3.png'
+import Camiset4 from '../../../../assets/Camiseta4.png'
+import Camiset5 from '../../../../assets/Camiseta5.png'
+import Camiset6 from '../../../../assets/Camiseta6.png'
+import Camiset7 from '../../../../assets/Camiseta7.png'
 
 import 'swiper/css';
 import 'swiper/css/pagination';
