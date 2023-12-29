@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import ImageBg from '../../../../assets/BgImage2.jpg'
+import ImageBg from '../../../../assets/BgImage2.webp'
 
 export const ContainerNews = styled.section`
   width: 100%;
