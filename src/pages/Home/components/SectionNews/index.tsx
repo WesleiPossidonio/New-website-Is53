@@ -9,7 +9,7 @@ export const SectionNews = () => {
   return (
     <ContainerNews id="news">
       <TitleText color="white" size="s" weight={900} family="roboto">Último Lançamento</TitleText>
-      <TitleText size="m" lineHeight="m" weight={300}>Proteção, Ao Vivo</TitleText>
+      <TitleText size="m" lineHeight="m" weight={300}>Era Pra Ser Eu, Ao Vivo</TitleText>
     
       <Dialog.Root>
         <Dialog.Trigger asChild>

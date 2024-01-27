@@ -117,3 +117,33 @@ export const MenuLink = styled(Link)`
   }
 
 `
+
+export const LinkAdmin = styled.p`
+  color: ${({theme}) => theme.colors["base-white"]};
+  font-size: ${({theme}) => theme.fontSizes["text-regular-s"]};
+  font-size: ${({theme}) => theme.fontFamily["base-source"]};
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px; 
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  &:after {
+    content: '';
+    width: 0px;
+    height: 0.125rem;
+    margin-top: 0.3125rem;
+
+    display: block;
+    background: ${({ theme }) => theme.colors["base-blue"]};
+    transition: 400ms;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+
+
+`

@@ -1,8 +1,9 @@
-import { ContainerHeader, ContentList, ContentListMobile, Headerdesktop, MenuLink } from "./styled"
+import { ContainerHeader, ContentList, ContentListMobile, Headerdesktop, LinkAdmin, MenuLink } from "./styled"
 import { useState, useEffect } from 'react'
 
 import Logo from '../../assets/Logo-is53.svg'
 import { List, X } from "@phosphor-icons/react"
+import { useNavigate } from "react-router-dom"
 
 
 export const Header = () => {
@@ -10,6 +11,8 @@ export const Header = () => {
   const [stateBackgroundHeader, setStateBackgroundHeader] =
   useState<boolean>(false)
   const [isOpen, setIsOpen] = useState(false)
+
+  const navigate = useNavigate()
   
 
   useEffect(() => {
@@ -34,6 +37,10 @@ export const Header = () => {
     setIsOpen((open: boolean) => !open)
   }
 
+  const handleNavigateToDashboard = () => {
+    navigate('/dashboard')
+  }
+
 
   return (
     <ContainerHeader stateHeader={stateBackgroundHeader}>
@@ -51,6 +58,7 @@ export const Header = () => {
           <MenuLink to="schedule" smooth={true}>Agenda</MenuLink>
           <MenuLink to="news" smooth={true}>Lançamentos</MenuLink>
           <MenuLink to="store" smooth={true}>Loja</MenuLink>
+          <LinkAdmin onClick={handleNavigateToDashboard}>Admin</LinkAdmin>
         </ContentList>
       </Headerdesktop>
 
@@ -61,6 +69,7 @@ export const Header = () => {
         <MenuLink to="schedule" smooth={true} onClick={handleTogleMenu}>Agenda</MenuLink>
         <MenuLink to="news" smooth={true} onClick={handleTogleMenu}>Lançamentos</MenuLink>
         <MenuLink to="store" smooth={true} onClick={handleTogleMenu}>Loja</MenuLink>
+        <LinkAdmin onClick={handleNavigateToDashboard}>Admin</LinkAdmin>
       </ContentListMobile>
     </ContainerHeader>
   )
