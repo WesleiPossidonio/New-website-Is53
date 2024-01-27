@@ -42,14 +42,24 @@ export const Form = styled.form`
    margin-top: 4rem;
 `
 
+export const ContainerNavigateLInk = styled.div`
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.7rem;
+
+`
+
 export const TextLink = styled.a`
-   width: 100%;
-   margin-top: 0.7rem;
    align-self: flex-start;
 
    font-size: ${({theme}) => theme.fontSizes["text-regular-s"]};
    color: ${({theme}) => theme.colors["base-white"]};
 
    cursor: pointer;
-`
 
+   &:hover {
+      color: ${({theme}) => theme.colors["base-blue"]};
+   }
+`

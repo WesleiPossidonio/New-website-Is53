@@ -6,7 +6,7 @@ import * as zod from 'zod'
 import { Button } from "../../components/Button"
 import { Input } from "../../components/Input"
 import {  TitleText } from "../../components/typograph"
-import { ContainerForm, ContainerLogin, Form, TextLink,} from "./styled"
+import { ContainerForm, ContainerLogin, ContainerNavigateLInk, Form, TextLink,} from "./styled"
 import { useDataUser } from '../../contexts/UserContext'
 import { useNavigate } from 'react-router-dom'
 
@@ -45,6 +45,10 @@ export const Login = () => {
     navigate('/atualizar-senha')
   }
 
+  const handleNavigateToHome = () => {
+    navigate('/')
+  }
+
   return (
     <ContainerLogin>
       <ContainerForm>
@@ -61,9 +65,16 @@ export const Login = () => {
           <Button>Acessar</Button>
         </Form>
 
-        <TextLink onClick={handleNavigateToUpdatePassword}>
-          Esqueci Senha?
-        </TextLink>
+        <ContainerNavigateLInk>
+          <TextLink onClick={handleNavigateToUpdatePassword}>
+            Esqueci Senha?
+          </TextLink>
+          <TextLink onClick={handleNavigateToHome}>
+            Voltar a Home
+          </TextLink>
+        </ContainerNavigateLInk>
+
+        
       </ContainerForm>
     </ContainerLogin>
   )
