@@ -3416,6 +3416,11 @@ use-sidecar@^1.1.2:
     detect-node-es "^1.1.0"
     tslib "^2.0.0"
 
+vite-plugin-sitemap@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/vite-plugin-sitemap/-/vite-plugin-sitemap-0.7.1.tgz#3b3cf6d2e067ec835f810e5eaaacf05485c819fe"
+  integrity sha512-4NRTkiWytLuAmcikckrLcLl9iYA20+5v6l8XshcOrzxH1WR8H0O3S6sTQYfjMrE8su/LG6Y0cTodvOdcOIxaLw==
+
 vite@^4.4.5:
   version "4.5.1"
   resolved "https://registry.yarnpkg.com/vite/-/vite-4.5.1.tgz#3370986e1ed5dbabbf35a6c2e1fb1e18555b968a"
